@@ -1,0 +1,64 @@
+{
+  "js-str-call": {
+    "body": [
+      "const stream = await chain.stream({ question: \"What is OVHcloud?\" });",
+      "console.log(\"Nestor 🤖: \");",
+      "",
+      "for await (const chunk of stream) {",
+      "  // Timeout to simulate a human answering the question",
+      "  await setTimeout(50);",
+      "  process.stdout.write(chunk.content);",
+      "}  "
+    ],
+    "description": "",
+    "prefix": "js-05-str-call",
+    "scope": "javascript"
+  },
+  "js-str-chain": {
+    "body": [
+      "const chain = promptTemplate.pipe(model);",
+      ""
+    ],
+    "description": "",
+    "prefix": "js-04-str-chain",
+    "scope": "javascript"
+  },
+  "js-str-dependencies": {
+    "body": [
+      "\"@langchain/mistralai\": \"0.0.28\",",
+      "\"langchain\": \"0.2.16\",",
+      "\"dotenv\" :\"16.4.5\"",
+      ""
+    ],
+    "description": "",
+    "prefix": "js-01-str-dependencies",
+    "scope": ""
+  },
+  "js-str-model": {
+    "body": [
+      "const model = new ChatMistralAI({",
+      "  modelName: \"Mistral-7B-Instruct-v0.2\",",
+      "  model: \"Mistral-7B-Instruct-v0.2\",",
+      "  apiKey: process.env.OVH_AI_ENDPOINTS_ACCESS_TOKEN,",
+      "  endpoint: \"https://mistral-7b-instruct-v02.endpoints.kepler.ai.cloud.ovh.net/api/openai_compat\",",
+      "  maxTokens: 512",
+      "});",
+      ""
+    ],
+    "description": "",
+    "prefix": "js-02-str-model",
+    "scope": "javascript"
+  },
+  "js-str-prompt": {
+    "body": [
+      "const promptTemplate = ChatPromptTemplate.fromMessages([",
+      "  [\"system\", \"You are Nestor, a virtual assistant. Answer to the question.\"],",
+      "  [\"human\", \"{question}\"]",
+      "]);",
+      ""
+    ],
+    "description": "",
+    "prefix": "js-03-str-prompt",
+    "scope": "javascript"
+  }
+}

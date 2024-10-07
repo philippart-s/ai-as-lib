@@ -1,0 +1,116 @@
+snippet simple-requirements:
+  name: "simple-requirements"
+  prefix: "01-simple-requirements"
+  body: |
+    # Manage dot file like `.env`file
+    python-dotenv==1.0.1
+    # To make HTTPs call
+    requests==2.32.3
+
+snippet simple-request:
+  name: "simple-request"
+  prefix: "02-simple-request"
+  scope: "python"
+  body: |
+    url = "https://mistral-7b-instruct-v02.endpoints.kepler.ai.cloud.ovh.net/api/openai_compat/v1/chat/completions"
+    payload = {
+        "max_tokens": 512,
+        "messages": [
+        ],
+        "model": "Mistral-7B-Instruct-v0.2",
+        "temperature": 0,
+    }
+
+snippet simple-system-message:
+  name: "simple-system-message"
+  prefix: "03-simple-sys-msg"
+  scope: "python"
+  body: |
+    {
+      "content": "You are Nestor, a virtual assistant. Answer to the question.",
+      "name": "Nestor",
+      "role": "system"
+    },
+
+snippet simple-user-message:
+  name: "simple-user-message"
+  prefix: "04-simple-usr-msg"
+  scope: "python"
+  body: |
+    {
+      "content": "What is OvHcloud?",
+      "role": "user"
+    }
+
+snippet simple-token:
+  name: "snippet simple-token"
+  prefix: "05-simple-token"
+  scope: "python"
+  body: |
+    headers = {
+        "Content-Type": "application/json",
+        "Authorization": f"Bearer {os.getenv('OVH_AI_ENDPOINTS_ACCESS_TOKEN')}",
+    }
+
+snippet simple-call:
+  name: "snippet simple-call"
+  prefix: "06-simple-call"
+  scope: "python"
+  body: |
+    response = requests.post(url, json=payload, headers=headers)
+    if response.status_code == 200:
+        # Handle response
+        response_data = response.json()
+        # Parse JSON response
+        choices = response_data["choices"]
+        for choice in choices:
+            text = choice["message"]["content"]
+            # Process text and finish_reason
+            print(f"🤖: {text}")
+    else:
+        print("Error:", response.status_code)
+
+snippet langchain-blk-requirements:
+  name: "langchain-blk-requirements"
+  prefix: "07-langchain-blk-requirements"
+  body: |
+    # Some usefull tools from LangChain
+    langchain-core==0.2.32
+    # To use mistral with LangChain
+    langchain-mistralai==0.1.12 
+
+snippet langchain-blk-model:
+  name: "langchain-blk-model"
+  prefix: "08-langchain-blk-model"
+  scope: "python"
+  body: |
+    model = ChatMistralAI(model="Mistral-7B-Instruct-v0.2", 
+                          api_key=os.getenv('OVH_AI_ENDPOINTS_ACCESS_TOKEN'),
+                          endpoint='https://mistral-7b-instruct-v02.endpoints.kepler.ai.cloud.ovh.net/api/openai_compat/v1', 
+                          max_tokens=512)
+
+snippet langchain-blk-prompt:
+  name: "langchain-blk-prompt"
+  prefix: "09-langchain-blk-prompt"
+  scope: "python"
+  body: |
+    prompt = ChatPromptTemplate.from_messages([
+      ("system", "You are Nestor, a virtual assistant. Answer to the question."),
+      ("human", "{question}"),
+    ])
+
+snippet langchain-blk-chain:
+  name: "langchain-blk-chain"
+  prefix: "10-langchain-blk-chain"
+  scope: "python"
+  body: |
+    chain = prompt | model
+
+snippet langchain-blk-call:
+  name: "langchain-blk-call"
+  prefix: "11-langchain-blk-call"
+  scope: "python"
+  body: |
+    response = chain.invoke("What is OVHcloud?")
+
+    print(f"🤖: {response.content}")

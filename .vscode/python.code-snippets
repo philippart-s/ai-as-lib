@@ -1,0 +1,142 @@
+{
+  "langchain-blk-call": {
+    "body": [
+      "response = chain.invoke(\"What is OVHcloud?\")",
+      "",
+      "print(f\"🤖: {response.content}\")"
+    ],
+    "description": "",
+    "prefix": "11-langchain-blk-call",
+    "scope": "python"
+  },
+  "langchain-blk-chain": {
+    "body": [
+      "chain = prompt | model",
+      ""
+    ],
+    "description": "",
+    "prefix": "10-langchain-blk-chain",
+    "scope": "python"
+  },
+  "langchain-blk-model": {
+    "body": [
+      "model = ChatMistralAI(model=\"Mistral-7B-Instruct-v0.2\", ",
+      "                      api_key=os.getenv('OVH_AI_ENDPOINTS_ACCESS_TOKEN'),",
+      "                      endpoint='https://mistral-7b-instruct-v02.endpoints.kepler.ai.cloud.ovh.net/api/openai_compat/v1', ",
+      "                      max_tokens=512)",
+      ""
+    ],
+    "description": "",
+    "prefix": "08-langchain-blk-model",
+    "scope": "python"
+  },
+  "langchain-blk-prompt": {
+    "body": [
+      "prompt = ChatPromptTemplate.from_messages([",
+      "  (\"system\", \"You are Nestor, a virtual assistant. Answer to the question.\"),",
+      "  (\"human\", \"{question}\"),",
+      "])",
+      ""
+    ],
+    "description": "",
+    "prefix": "09-langchain-blk-prompt",
+    "scope": "python"
+  },
+  "langchain-blk-requirements": {
+    "body": [
+      "# Some usefull tools from LangChain",
+      "langchain-core==0.2.32",
+      "# To use mistral with LangChain",
+      "langchain-mistralai==0.1.12 ",
+      ""
+    ],
+    "description": "",
+    "prefix": "07-langchain-blk-requirements",
+    "scope": ""
+  },
+  "simple-request": {
+    "body": [
+      "url = \"https://mistral-7b-instruct-v02.endpoints.kepler.ai.cloud.ovh.net/api/openai_compat/v1/chat/completions\"",
+      "payload = {",
+      "    \"max_tokens\": 512,",
+      "    \"messages\": [",
+      "    ],",
+      "    \"model\": \"Mistral-7B-Instruct-v0.2\",",
+      "    \"temperature\": 0,",
+      "}",
+      ""
+    ],
+    "description": "",
+    "prefix": "02-simple-request",
+    "scope": "python"
+  },
+  "simple-requirements": {
+    "body": [
+      "# Manage dot file like `.env`file",
+      "python-dotenv==1.0.1",
+      "# To make HTTPs call",
+      "requests==2.32.3",
+      ""
+    ],
+    "description": "",
+    "prefix": "01-simple-requirements",
+    "scope": ""
+  },
+  "simple-system-message": {
+    "body": [
+      "{",
+      "  \"content\": \"You are Nestor, a virtual assistant. Answer to the question.\",",
+      "  \"name\": \"Nestor\",",
+      "  \"role\": \"system\"",
+      "},",
+      ""
+    ],
+    "description": "",
+    "prefix": "03-simple-sys-msg",
+    "scope": "python"
+  },
+  "simple-user-message": {
+    "body": [
+      "{",
+      "  \"content\": \"What is OvHcloud?\",",
+      "  \"role\": \"user\"",
+      "}",
+      ""
+    ],
+    "description": "",
+    "prefix": "04-simple-usr-msg",
+    "scope": "python"
+  },
+  "snippet simple-call": {
+    "body": [
+      "response = requests.post(url, json=payload, headers=headers)",
+      "if response.status_code == 200:",
+      "    # Handle response",
+      "    response_data = response.json()",
+      "    # Parse JSON response",
+      "    choices = response_data[\"choices\"]",
+      "    for choice in choices:",
+      "        text = choice[\"message\"][\"content\"]",
+      "        # Process text and finish_reason",
+      "        print(f\"🤖: {text}\")",
+      "else:",
+      "    print(\"Error:\", response.status_code)",
+      ""
+    ],
+    "description": "",
+    "prefix": "06-simple-call",
+    "scope": "python"
+  },
+  "snippet simple-token": {
+    "body": [
+      "headers = {",
+      "    \"Content-Type\": \"application/json\",",
+      "    \"Authorization\": f\"Bearer {os.getenv('OVH_AI_ENDPOINTS_ACCESS_TOKEN')}\",",
+      "}",
+      ""
+    ],
+    "description": "",
+    "prefix": "05-simple-token",
+    "scope": "python"
+  }
+}
