@@ -32,6 +32,8 @@ The slides are in the [slides](./slides/) folder and are developed with [SliDesk
 
 ### 🐍 Python 🐍
 
+Python source files are in the [python](./python/) folder.
+
 Create a virtual environment and install the dependencies:
 ```bash
 cd python
