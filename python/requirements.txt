@@ -1,0 +1,8 @@
+# Manage dot file like `.env`file
+python-dotenv==1.0.1
+# To make HTTPs call
+requests==2.32.3
+# Some usefull tools from LangChain
+langchain-core==0.2.32
+# To use mistral with LangChain
+langchain-mistralai==0.1.12 
