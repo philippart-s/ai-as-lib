@@ -1,0 +1,27 @@
+## 
+
+<h2>Merci !!!</h2>
+
+<table style="font-size: 1.5vw; text-align: center; width: 100%;">
+    <tr>
+        <td align="center" width="33%"><img src="assets/images/qrcode-slides.png" width="50%" alt=""/></td>
+        <td align="center" width="33%"><img src="assets/images/qrcode-feedbacks.png" alt="" width="50%"/></td>
+        <td align="center" width="33%"><img src="assets/images/qrcode-sources.png" alt="" width="50%"/></td>
+    </tr>
+    <tr>
+        <td>
+            Slides<br />
+            <a href="https://ovh.to/xxx"> https://ovh.to/xxx </a>
+        </td>
+        <td>
+            Feedbacks<br />
+            <a href="https://ovh.to/xxx"> https://ovh.to/xxx </a> 
+        </td>
+        <td>
+            Sources<br/>
+            <a href="https://ovh.to/xxx"> https://ovh.to/xxx </a> 
+        </td>
+    </tr>
+</table>
+
+<img style="display: block; margin-left: auto; margin-right: auto; width: 70%" src="assets/images/minions.png" />
