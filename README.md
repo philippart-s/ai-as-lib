@@ -44,6 +44,8 @@ pip install -r requirements.txt
 
 ### 🕸️ JavaScript 🕸️
 
+JavaScript source files are in the [javascript](./javascript/) folder.
+
 ```bash
 cd javascript
 npm install
