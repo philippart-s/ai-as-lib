@@ -30,16 +30,28 @@ snippets generate \
 
 The slides are in the [slides](./slides/) folder and are developed with [SliDesk](https://slidesk.github.io/slidesk-doc/docs/intro/).
 
+### 🤖 React client 🤖
+
+Web client, written in React, is in the [react-client](./react-client/) folder.
+
+```bash
+cd react-client \
+npm install \
+npm start
+```
+
+Open [http://localhost:3000](http://localhost:3000) to see the client.
+
 ### 🐍 Python 🐍
 
 Python source files are in the [python](./python/) folder.
 
 Create a virtual environment and install the dependencies:
 ```bash
-cd python
-python3 -m venv .venv
-source .venv/bin/activate
-pip install -r requirements.txt
+cd python \
+python3 -m venv .venv \
+source .venv/bin/activate \
+pip install -r requirements.txt \
 ```
 
 ### 🕸️ JavaScript 🕸️
@@ -47,13 +59,16 @@ pip install -r requirements.txt
 JavaScript source files are in the [javascript](./javascript/) folder.
 
 ```bash
-cd javascript
+cd javascript \
 npm install
 ```
 
 ### ☕️ Java ☕️
 
+Java source files are in the [java](./java/) folder.
+
 ```bash
-cd java
+cd java \
+quarkus create app fr.wilda.ai:ai-as-lib --extension='quarkus-langchain4j-mistral-ai,rest' --no-wrapper \
 mvn clean compile
 ```
