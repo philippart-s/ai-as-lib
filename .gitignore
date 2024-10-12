@@ -164,3 +164,9 @@ cython_debug/
 
 # JavaScript
 node_modules/
+
+#Idea
+.idea/
+
+# Quarkus
+.quarkus/
