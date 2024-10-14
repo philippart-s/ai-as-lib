@@ -69,6 +69,5 @@ Java source files are in the [java](./java/) folder.
 
 ```bash
 cd java \
-quarkus create app fr.wilda.ai:ai-as-lib --extension='quarkus-langchain4j-mistral-ai,rest' --no-wrapper \
 mvn clean compile
 ```
