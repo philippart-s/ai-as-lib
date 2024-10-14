@@ -30,18 +30,6 @@ snippets generate \
 
 The slides are in the [slides](./slides/) folder and are developed with [SliDesk](https://slidesk.github.io/slidesk-doc/docs/intro/).
 
-### 🤖 React client 🤖
-
-Web client, written in React, is in the [react-client](./react-client/) folder.
-
-```bash
-cd react-client \
-npm install \
-npm start
-```
-
-Open [http://localhost:3000](http://localhost:3000) to see the client.
-
 ### 🐍 Python 🐍
 
 Python source files are in the [python](./python/) folder.
@@ -72,3 +60,25 @@ cd java \
 quarkus create app fr.wilda.ai:ai-as-lib --extension='quarkus-langchain4j-mistral-ai,rest' --no-wrapper \
 mvn clean compile
 ```
+
+### ☕️ Quarkus ⚡️️
+
+Quarkus source files are in the [java-quarkus](./java-quarkus/) folder.
+
+```bash
+cd java-quarkus \
+quarkus create app fr.wilda.ai:ai-as-lib --extension='quarkus-langchain4j-mistral-ai,rest' --no-wrapper \
+mvn clean compile
+```
+
+#### 🤖 React client 🤖
+
+Web client, written in React, is in the [react-client](./react-client/) folder.
+
+```bash
+cd react-client \
+npm install \
+npm start
+```
+
+Open [http://localhost:3000](http://localhost:3000) to see the client.
