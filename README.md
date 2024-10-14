@@ -16,7 +16,7 @@ The repository [.vscode](./.vscode) contains VSCode snippets to help you with th
 One file by language: 
   - `python.code-snippets` for Python
 
-Each of this files is created using the tools [snippets](https://github.com/bots-garden/snippets).
+Each of these files is created using the tools [snippets](https://github.com/bots-garden/snippets).
 Here is an example of usage: 
 ```bash
 snippets generate \
@@ -29,6 +29,18 @@ snippets generate \
 ### 🖼️ Slides 🖼️
 
 The slides are in the [slides](./slides/) folder and are developed with [SliDesk](https://slidesk.github.io/slidesk-doc/docs/intro/).
+
+### 🤖 React client 🤖
+
+Web client, written in React, is in the [react-client](./react-client/) folder.
+
+```bash
+cd react-client \
+npm install \
+npm start
+```
+
+Open [http://localhost:3000](http://localhost:3000) to see the client.
 
 ### 🐍 Python 🐍
 
@@ -57,7 +69,6 @@ Java source files are in the [java](./java/) folder.
 
 ```bash
 cd java \
-quarkus create app fr.wilda.ai:ai-as-lib --extension='quarkus-langchain4j-mistral-ai,rest' --no-wrapper \
 mvn clean compile
 ```
 
@@ -66,7 +77,7 @@ mvn clean compile
 Quarkus source files are in the [java-quarkus](./java-quarkus/) folder.
 
 ```bash
-cd java-quarkus \
+cd java \
 quarkus create app fr.wilda.ai:ai-as-lib --extension='quarkus-langchain4j-mistral-ai,rest' --no-wrapper \
 mvn clean compile
 ```
