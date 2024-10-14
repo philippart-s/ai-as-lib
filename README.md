@@ -16,7 +16,7 @@ The repository [.vscode](./.vscode) contains VSCode snippets to help you with th
 One file by language: 
   - `python.code-snippets` for Python
 
-Each of this files is created using the tools [snippets](https://github.com/bots-garden/snippets).
+Each of these files is created using the tools [snippets](https://github.com/bots-garden/snippets).
 Here is an example of usage: 
 ```bash
 snippets generate \
