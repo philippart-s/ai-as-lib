@@ -1,4 +1,4 @@
-package com.ovhcloud.examples.aiendpoints;
+package com.ovhcloud.examples.aiendpoints.chatbot;
 
 import static dev.langchain4j.data.document.loader.FileSystemDocumentLoader.loadDocument;
 

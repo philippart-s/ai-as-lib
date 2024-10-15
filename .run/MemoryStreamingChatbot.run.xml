@@ -3,7 +3,7 @@
     <option name="envFilePaths">
       <option value="$PROJECT_DIR$/.env" />
     </option>
-    <option name="MAIN_CLASS_NAME" value="com.ovhcloud.examples.aiendpoints.MemoryStreamingChatbot" />
+    <option name="MAIN_CLASS_NAME" value="com.ovhcloud.examples.aiendpoints.chatbot.MemoryStreamingChatbot" />
     <module name="java-core-examples" />
     <extension name="coverage">
       <pattern>

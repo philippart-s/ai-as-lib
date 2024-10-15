@@ -1,4 +1,4 @@
-package com.ovhcloud.examples.aiendpoints;
+package com.ovhcloud.examples.aiendpoints.chatbot;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

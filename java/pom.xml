@@ -44,6 +44,11 @@
       <version>1.5.6</version>
     </dependency>
 
+    <dependency>
+      <groupId>fr.wilda.ai</groupId>
+      <artifactId>java-ai-toolkit</artifactId>
+      <version>1.0.0</version>
+    </dependency>
   </dependencies>
 
   <build>
