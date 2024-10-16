@@ -1,4 +1,4 @@
-package com.ovhcloud.examples.aiendpoints.nlp;
+package fr.wilda.ai.nlp;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import fr.wilda.ai.nlp.Emotion;

@@ -3,7 +3,7 @@
     <option name="envFilePaths">
       <option value="$PROJECT_DIR$/.env" />
     </option>
-    <option name="MAIN_CLASS_NAME" value="com.ovhcloud.examples.aiendpoints.chatbot.RAGStreamingChatbot" />
+    <option name="MAIN_CLASS_NAME" value="chatbot.fr.wilda.ai.RAGStreamingChatbot" />
     <module name="java-core-examples" />
     <extension name="coverage">
       <pattern>
