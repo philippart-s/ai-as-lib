@@ -1,9 +1,9 @@
 <component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="MemoryStreamingChatbot" type="Application" factoryName="Application" nameIsGenerated="true">
+  <configuration default="false" name="MemoryStreamingChatbot" type="Application" factoryName="Application">
     <option name="envFilePaths">
       <option value="$PROJECT_DIR$/.env" />
     </option>
-    <option name="MAIN_CLASS_NAME" value="com.ovhcloud.examples.aiendpoints.chatbot.MemoryStreamingChatbot" />
+    <option name="MAIN_CLASS_NAME" value="fr.wilda.ai.chatbot.MemoryStreamingChatbot" />
     <module name="java-core-examples" />
     <extension name="coverage">
       <pattern>
