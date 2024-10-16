@@ -55,8 +55,6 @@ npm install
 
 Java source files are in the [java](./java/) folder.
 
-Java source files are in the [java](./java/) folder.
-
 ```bash
 cd java \
 mvn clean compile
