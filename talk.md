@@ -11,14 +11,14 @@
 
 ### 🛑 Blocking chatbot with no Framework 🛑
 
-- ⬇️ In the [requirements.txt](./python/requirements.txt) file, declare the dependencies: `01-simple-requirements`
+- ⬇️ In the [requirements.txt](./python/requirements.txt) file, declare the dependencies: `py-01-simple-requirements`
 - 📁 open the [blocking-chatbot-without-fwk](./python/blocking-chatbot-without-fwk.py)
 - 📝 use the snippets as written in the comments
 - ⚡️ run the script: `cd python` && `python blocking-chatbot-without-fwk.py`
 
 ### 🛑 Blocking chatbot with LangChain 🛑
 
-- ⬇️ In the [requirements.txt](./python/requirements.txt) file, declare the dependencies: `07-langchain-blk-requirements`
+- ⬇️ In the [requirements.txt](./python/requirements.txt) file, declare the dependencies: `py-07-langchain-blk-requirements`
 - 📁 open the [blocking-chatbot-langchain](./python/blocking-chatbot-langchain.py)
 - 📝 use the snippets as written in the comments
 - ⚡️ run the script: `cd python` && `python blocking-chatbot-langchain.py`
