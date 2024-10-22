@@ -51,3 +51,10 @@
 - ⚡️ run the main class with VSCode debug view and `DEBUG CONSOLE` view
 - 🫣 comment the line 76
 - ⚡️ run the main class with VSCode debug view and `DEBUG CONSOLE` view
+
+### ❤️ Sentiment analysis ❤️
+
+- ⬇️ In the [pom.xml](./java/pom.xml) file, declare the dependencies: `java-14-sentiment-dependency`
+- 📁 open the [SentimentsAnalysis](./java/src/main/java/fr/wilda/ai/nlp/SentimentsAnalysis.java)
+- 📝 use the snippets as written in the comments
+- ⚡️ run the main class with VSCode debug view and `DEBUG CONSOLE` view
