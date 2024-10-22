@@ -20,6 +20,7 @@
   </properties>
 
   <dependencies>
+    <!-- java-01-mem-dependencies -->
     <dependency>
       <groupId>dev.langchain4j</groupId>
       <artifactId>langchain4j</artifactId>
@@ -32,6 +33,7 @@
       <version>${langchain4j.version}</version>
     </dependency>
 
+    <!-- java-07-rag-dependency -->
     <dependency>
       <groupId>dev.langchain4j</groupId>
       <artifactId>langchain4j-ovh-ai</artifactId>
@@ -44,6 +46,7 @@
       <version>1.5.6</version>
     </dependency>
 
+    <!-- java-14-sentiment-dependency -->
     <dependency>
       <groupId>fr.wilda.ai</groupId>
       <artifactId>java-ai-toolkit</artifactId>
