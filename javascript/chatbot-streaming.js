@@ -6,6 +6,7 @@ import {config} from 'dotenv';
 // access the environment variables from the .env file
 config({path: '../.env'});
 
+// js-02-str-model
 const model = new ChatMistralAI({
   modelName: "Mistral-7B-Instruct-v0.2",
   model: "Mistral-7B-Instruct-v0.2",
@@ -14,13 +15,16 @@ const model = new ChatMistralAI({
   maxTokens: 512
 });
 
+// js-03-str-prompt
 const promptTemplate = ChatPromptTemplate.fromMessages([
   ["system", "You are Nestor, a virtual assistant. Answer to the question."],
   ["human", "{question}"]
 ]);
 
+// js-04-str-chain
 const chain = promptTemplate.pipe(model);
 
+// js-05-str-call
 const stream = await chain.stream({ question: "What is OVHcloud?" });
 console.log("Nestor 🤖: ");
 
