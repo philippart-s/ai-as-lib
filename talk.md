@@ -58,3 +58,19 @@
 - 📁 open the [SentimentsAnalysis](./java/src/main/java/fr/wilda/ai/nlp/SentimentsAnalysis.java)
 - 📝 use the snippets as written in the comments
 - ⚡️ run the main class with VSCode debug view and `DEBUG CONSOLE` view
+
+## ⚡️ Quarkus demos ☕️
+
+### 🤖 Virtual assistant 🤖
+
+- ✨ create an empty project in the `tmp` folder: `quarkus create app fr.wilda.ai:ai-as-lib --extension='quarkus-langchain4j-mistral-ai,rest,quarkus-websockets-next' --no-wrapper`
+- 📁 open the [application.properties](./java-quarkus/src/main/resources/application.properties) file
+- 📝 use the snippets `quarkus-01-ai-langchain4j` 
+- 📁 open the [AIEndpointService](./java-quarkus/src/main/java/fr/wilda/ai/service/AIEndpointService.java) interface 
+- 📝 use the snippets as written in the comments
+- 📁 open the [Jarvis](./java-quarkus/src/main/java/fr/wilda/ai/Jarvis.java) interface
+- 📝 use the snippets as written in the comments
+- 📁 open the [application.properties](./java-quarkus/src/main/resources/application.properties) file
+- 📝 use the snippets `quarkus-07-ws-cors` 
+- ⚡️ run the web server: `cd react-client && npm start`
+
