@@ -1,6 +1,6 @@
 #!/bin/bash
 
-bat -P -r 8: ./00-chatbot-langchain.sh
+bat -P -r 8: $(basename "$0")
 
 # Set some environment variables to use AI Endpoints
 source ../.env
