@@ -11,8 +11,5 @@
   "license": "Apache-2.0",
   "dependencies": {
     // js-01-str-dependencies
-    "langchain": "0.2.16",
-    "@langchain/mistralai": "0.0.28",
-    "dotenv" :"16.4.5"
   }
 }

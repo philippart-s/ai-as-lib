@@ -28,6 +28,9 @@
 
 ## 🕸️ JavaScript demos 🕸️
 
+- 📂 go to [javascript](./javascript) folder
+- 🛠️ source the environment: `source ../.env`
+
 ### 💬 Streaming chatbot with LangChain 💬
 
 - ⬇️ In the [package.json](./javascript/package.json) file, declare the dependencies: `js-01-str-dependencies`
