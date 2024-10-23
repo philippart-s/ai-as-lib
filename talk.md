@@ -49,25 +49,25 @@
 - ⬇️ In the [pom.xml](./java/pom.xml) file, declare the dependencies: `java-01-mem-dependencies`
 - 📁 open the [MemoryStreamingChatbot](./java/src/main/java/com/ovhcloud/examples/aiendpoints/MemoryStreamingChatbot.java)
 - 📝 use the snippets as written in the comments
-- ⚡️ run the main class with VSCode debug view and `DEBUG CONSOLE` view
+- ⚡️ run the main class with IDE or `04-chatbot-memory.sh`
 - 🫣 comment the line 37
-- ⚡️ run the main class with VSCode debug view and `DEBUG CONSOLE` view
+- ⚡️ run the main class with IDE or `04-chatbot-memory.sh`
 
 ### 🗃️ RAG with LangChain4j 🗃️
 
 - ⬇️ In the [pom.xml](./java/pom.xml) file, declare the dependencies: `java-07-rag-dependency`
 - 📁 open the [RAGStreamingChatbot](./java/src/main/java/com/ovhcloud/examples/aiendpoints/RAGStreamingChatbot.java)
 - 📝 use the snippets as written in the comments
-- ⚡️ run the main class with VSCode debug view and `DEBUG CONSOLE` view
+- ⚡️ run the main class with IDE or `05-chatbot-rag.sh`
 - 🫣 comment the line 76
-- ⚡️ run the main class with VSCode debug view and `DEBUG CONSOLE` view
+- ⚡️ run the main class with IDE or `05-chatbot-rag.sh`
 
 ### ❤️ Sentiment analysis ❤️
 
 - ⬇️ In the [pom.xml](./java/pom.xml) file, declare the dependencies: `java-14-sentiment-dependency`
 - 📁 open the [SentimentsAnalysis](./java/src/main/java/fr/wilda/ai/nlp/SentimentsAnalysis.java)
 - 📝 use the snippets as written in the comments
-- ⚡️ run the main class with VSCode debug view and `DEBUG CONSOLE` view
+- ⚡️ run the main class with IDE or `06-sentiment-analysis.sh`
 
 ## ⚡️ Quarkus demos ☕️
 
@@ -83,4 +83,5 @@
 - 📁 open the [application.properties](./java-quarkus/src/main/resources/application.properties) file
 - 📝 use the snippets `quarkus-07-ws-cors` 
 - ⚡️ run the web server: `cd react-client && npm start`
+- 🛜 access to the chatbot: http://localhost:3000/
 
