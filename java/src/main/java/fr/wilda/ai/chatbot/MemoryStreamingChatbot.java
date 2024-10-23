@@ -14,6 +14,8 @@ public class MemoryStreamingChatbot {
 
         // java-04-mem-memory
 
+        // java-05-mem-assistant.
+
         // java-06-mem-prompt
     }
 }
