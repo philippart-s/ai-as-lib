@@ -40,6 +40,10 @@
 
 ## ☕️ Java demos ☕️
 
+- 📂 go to [java](./java) folder
+- 🛠️ source the environment: `source ../.env`
+
+
 ### 🧠 Memory chatbot with LangChain4j 🧠
 
 - ⬇️ In the [pom.xml](./java/pom.xml) file, declare the dependencies: `java-01-mem-dependencies`

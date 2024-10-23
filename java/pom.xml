@@ -21,24 +21,8 @@
 
   <dependencies>
     <!-- java-01-mem-dependencies -->
-    <dependency>
-      <groupId>dev.langchain4j</groupId>
-      <artifactId>langchain4j</artifactId>
-      <version>${langchain4j.version}</version>
-    </dependency>
-
-    <dependency>
-      <groupId>dev.langchain4j</groupId>
-      <artifactId>langchain4j-mistral-ai</artifactId>
-      <version>${langchain4j.version}</version>
-    </dependency>
 
     <!-- java-07-rag-dependency -->
-    <dependency>
-      <groupId>dev.langchain4j</groupId>
-      <artifactId>langchain4j-ovh-ai</artifactId>
-      <version>${langchain4j.version}</version>
-    </dependency>
 
     <dependency>
       <groupId>ch.qos.logback</groupId>
@@ -47,11 +31,6 @@
     </dependency>
 
     <!-- java-14-sentiment-dependency -->
-    <dependency>
-      <groupId>fr.wilda.ai</groupId>
-      <artifactId>java-ai-toolkit</artifactId>
-      <version>1.0.0</version>
-    </dependency>
   </dependencies>
 
   <build>
