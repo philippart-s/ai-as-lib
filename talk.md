@@ -9,6 +9,9 @@
 
 ## 🐍 Python demos 🐍
 
+- 📂 go to [python](./python) folder
+- 🛠️ source the environment: `source ../.env`
+
 ### 🛑 Blocking chatbot with no Framework 🛑
 
 - ⬇️ In the [requirements.txt](./python/requirements.txt) file, declare the dependencies: `py-01-simple-requirements`
