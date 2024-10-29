@@ -1,5 +1,7 @@
 ## LangChain .[slide-text steps]
 
+!image(assets/images/LangChain-logo.png,, 300, , float: right;margin-top: -16vh)
+
 - ✨ Le projet d'origine : LangChain
 - 🐍 Technologies: Python et Javascript
 - 🧩 SDK / Library

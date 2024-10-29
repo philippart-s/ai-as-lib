@@ -1,8 +1,0 @@
-## Un chatbot ... avec plusieurs langages .[slide-text steps]
-
-!image(assets/images/demos-archi.png,,1024,, display: block;  margin-left: auto;  margin-right: auto;  width: 50%;)
-
-- 🛑 Chatbot bloquant
-- 💬 Chatbot "streaming"
-- 🧠 Chatbot avec mémoire
-- 🗃️ Retrieval Augmented Generation
