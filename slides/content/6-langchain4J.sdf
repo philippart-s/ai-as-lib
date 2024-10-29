@@ -1,0 +1,9 @@
+## LangChain4J .[slide-text steps]
+
+!image(assets/images/langchain4j-logo.svg,, 300, , float: right;margin-top: -16vh)
+
+- 🔀 Variante du projet d'origine (il existe d'autres variantes comme LangChainGo)
+- 🤝 Pas de lien avec la communauté LangChain
+- 🧱 Une base commune avec des différences sur certaines fonctionnalités
+- 🎯 Même but de simplification
+- ⚡️ Starter SpringBoot et extension Quarkus
