@@ -4,6 +4,7 @@ import dev.langchain4j.memory.ChatMemory;
 import dev.langchain4j.memory.chat.MessageWindowChatMemory;
 import dev.langchain4j.model.mistralai.MistralAiStreamingChatModel;
 import dev.langchain4j.service.AiServices;
+import dev.langchain4j.service.SystemMessage;
 import dev.langchain4j.service.TokenStream;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -14,6 +15,7 @@ public class MemoryStreamingChatbot {
 
     // java-02-mem-interface
     interface Assistant {
+        @SystemMessage("You are Nestor, a virtual assistant. Answer to the question.")
         TokenStream chat(String message);
     }
 
