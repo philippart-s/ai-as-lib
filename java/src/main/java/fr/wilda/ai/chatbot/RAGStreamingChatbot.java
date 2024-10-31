@@ -13,6 +13,7 @@ import dev.langchain4j.model.ovhai.OvhAiEmbeddingModel;
 import dev.langchain4j.rag.content.retriever.ContentRetriever;
 import dev.langchain4j.rag.content.retriever.EmbeddingStoreContentRetriever;
 import dev.langchain4j.service.AiServices;
+import dev.langchain4j.service.SystemMessage;
 import dev.langchain4j.service.TokenStream;
 import dev.langchain4j.store.embedding.EmbeddingStore;
 import dev.langchain4j.store.embedding.inmemory.InMemoryEmbeddingStore;
@@ -29,6 +30,7 @@ public class RAGStreamingChatbot {
 
     // java-02-mem-interface
     interface Assistant {
+        @SystemMessage("You are Nestor, a virtual assistant. Answer to the question.")
         TokenStream chat(String userMessage);
     }
 
