@@ -1,6 +1,6 @@
 #!/bin/bash
 
-bat -P -r 10: $(basename "$0")
+bat --color never -P -r 10: $(basename "$0")
 
 # Set some environment variables to use AI Endpoints
 source ../.env
