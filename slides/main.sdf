@@ -1,5 +1,0 @@
-/::
-custom_css: assets/css/custom.css
-::/
-
-!include(content)
