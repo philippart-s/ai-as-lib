@@ -11,6 +11,7 @@ load_dotenv(dotenv_path='../.env')
 model = ChatMistralAI(model="Mistral-7B-Instruct-v0.2", 
                         api_key=os.getenv('OVH_AI_ENDPOINTS_ACCESS_TOKEN'),
                         endpoint='https://mistral-7b-instruct-v02.endpoints.kepler.ai.cloud.ovh.net/api/openai_compat/v1', 
+                        temperature=0,
                         max_tokens=512)
 
 # py-09-langchain-blk-prompt

@@ -25,8 +25,8 @@
   },
   "js-str-dependencies": {
     "body": [
-      "\"@langchain/mistralai\": \"0.0.28\",",
-      "\"langchain\": \"0.2.16\",",
+      "\"langchain\": \"0.3.15\",",
+      "\"@langchain/mistralai\": \"0.2.0\",",
       "\"dotenv\" :\"16.4.5\"",
       ""
     ],
@@ -40,7 +40,8 @@
       "  modelName: \"Mistral-7B-Instruct-v0.2\",",
       "  model: \"Mistral-7B-Instruct-v0.2\",",
       "  apiKey: process.env.OVH_AI_ENDPOINTS_ACCESS_TOKEN,",
-      "  endpoint: \"https://mistral-7b-instruct-v02.endpoints.kepler.ai.cloud.ovh.net/api/openai_compat\",",
+      "  serverURL: \"https://mistral-7b-instruct-v02.endpoints.kepler.ai.cloud.ovh.net/api/openai_compat\",",
+      "  temperature:0,",
       "  maxTokens: 512",
       "});",
       ""
