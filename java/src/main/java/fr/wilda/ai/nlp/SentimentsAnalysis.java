@@ -1,7 +1,6 @@
 package fr.wilda.ai.nlp;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import fr.wilda.ai.nlp.Emotion;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
