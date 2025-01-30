@@ -43,7 +43,7 @@ public class RAGStreamingChatbot {
                 RAGStreamingChatbot.class.getResource("/rag-files/content.txt").getFile(),
                 documentParser
         );
-        DocumentSplitter splitter = DocumentSplitters.recursive(300, 0);
+        DocumentSplitter splitter = DocumentSplitters.recursive(400, 0);
 
         List<TextSegment> segments = splitter.split(document);
 
