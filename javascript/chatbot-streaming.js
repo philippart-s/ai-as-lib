@@ -11,7 +11,8 @@ const model = new ChatMistralAI({
   modelName: "Mistral-7B-Instruct-v0.2",
   model: "Mistral-7B-Instruct-v0.2",
   apiKey: process.env.OVH_AI_ENDPOINTS_ACCESS_TOKEN,
-  endpoint: "https://mistral-7b-instruct-v02.endpoints.kepler.ai.cloud.ovh.net/api/openai_compat",
+  serverURL: "https://mistral-7b-instruct-v02.endpoints.kepler.ai.cloud.ovh.net/api/openai_compat",
+  temperature:0,
   maxTokens: 512
 });
 
