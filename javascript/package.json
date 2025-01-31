@@ -9,7 +9,10 @@
   },
   "author": "OVHcloud",
   "license": "Apache-2.0",
+  "step": "js-01-str-dependencies",
   "dependencies": {
-    // js-01-str-dependencies
+    "langchain": "0.3.15",
+    "@langchain/mistralai": "0.2.0",
+    "dotenv" :"16.4.5"
   }
 }
