@@ -1,5 +1,7 @@
 package fr.wilda.ai.chatbot;
 
+//import static dev.langchain4j.data.document.loader.FileSystemDocumentLoader.loadDocument;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
