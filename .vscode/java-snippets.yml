@@ -173,8 +173,8 @@ snippet java-sentiment-dependency:
     </dependency>
 
 snippet java-sentiment-http:
-  name: "java-sentiment-dependency"
-  prefix: "java-sentiment-http"
+  name: "java-sentiment-http"
+  prefix: "java-15-sentiment-http"
   scope: "java"
   body: |
     // Create a HTTP client

@@ -190,13 +190,16 @@
   },
   "java-sentiment-dependency": {
     "body": [
-      "// Create a HTTP client",
-      "HttpClient client = HttpClient.newHttpClient();",
+      "\u003cdependency\u003e",
+      "  \u003cgroupId\u003efr.wilda.ai\u003c/groupId\u003e",
+      "  \u003cartifactId\u003ejava-ai-toolkit\u003c/artifactId\u003e",
+      "  \u003cversion\u003e1.0.0\u003c/version\u003e",
+      "\u003c/dependency\u003e",
       ""
     ],
     "description": "",
-    "prefix": "java-sentiment-http",
-    "scope": "java"
+    "prefix": "java-14-sentiment-dependency",
+    "scope": "xml"
   },
   "java-sentiment-display": {
     "body": [
@@ -208,6 +211,16 @@
     ],
     "description": "",
     "prefix": "java-19-sentiment-display",
+    "scope": "java"
+  },
+  "java-sentiment-http": {
+    "body": [
+      "// Create a HTTP client",
+      "HttpClient client = HttpClient.newHttpClient();",
+      ""
+    ],
+    "description": "",
+    "prefix": "java-15-sentiment-http",
     "scope": "java"
   },
   "java-sentiment-mapper": {
