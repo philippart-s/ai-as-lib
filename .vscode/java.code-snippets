@@ -107,7 +107,7 @@
       "  RAGStreamingChatbot.class.getResource(\"/rag-files/content.txt\").getFile(),",
       "  documentParser",
       ");",
-      "DocumentSplitter splitter = DocumentSplitters.recursive(400, 0);",
+      "DocumentSplitter splitter = DocumentSplitters.recursive(300, 0);",
       "",
       "List\u003cTextSegment\u003e segments = splitter.split(document);",
       ""
@@ -165,7 +165,8 @@
       "tokenStream",
       "    .onNext(_LOG::info)",
       "    .onError(Throwable::printStackTrace)",
-      "    .start();"
+      "    .start();",
+      ""
     ],
     "description": "",
     "prefix": "java-13-rag-prompt",
@@ -185,6 +186,77 @@
     ],
     "description": "",
     "prefix": "java-10-rag-store",
+    "scope": "java"
+  },
+  "java-sentiment-dependency": {
+    "body": [
+      "\u003cdependency\u003e",
+      "  \u003cgroupId\u003efr.wilda.ai\u003c/groupId\u003e",
+      "  \u003cartifactId\u003ejava-ai-toolkit\u003c/artifactId\u003e",
+      "  \u003cversion\u003e1.0.0\u003c/version\u003e",
+      "\u003c/dependency\u003e",
+      ""
+    ],
+    "description": "",
+    "prefix": "java-14-sentiment-dependency",
+    "scope": "xml"
+  },
+  "java-sentiment-display": {
+    "body": [
+      "// Print the response status code and body",
+      "_LOG.debug(\"Status code: \" + response.statusCode());",
+      "_LOG.debug(\"Response body: \" + response.body());",
+      "_LOG.info(\"Emotion: \" + responseObject.toEmoji());",
+      ""
+    ],
+    "description": "",
+    "prefix": "java-19-sentiment-display",
+    "scope": "java"
+  },
+  "java-sentiment-http": {
+    "body": [
+      "// Create a HTTP client",
+      "HttpClient client = HttpClient.newHttpClient();",
+      ""
+    ],
+    "description": "",
+    "prefix": "java-15-sentiment-http",
+    "scope": "java"
+  },
+  "java-sentiment-mapper": {
+    "body": [
+      "// Deserialize the response to a Java object using Jackson",
+      "ObjectMapper objectMapper = new ObjectMapper();",
+      "Emotion responseObject = objectMapper.readValue(response.body(), Emotion.class);",
+      ""
+    ],
+    "description": "",
+    "prefix": "java-18-sentiment-mapper",
+    "scope": "java"
+  },
+  "java-sentiment-request": {
+    "body": [
+      "// Create a request builder",
+      "HttpRequest request = HttpRequest.newBuilder()",
+      "        .uri(URI.create(\"https://roberta-base-go-emotions.endpoints.kepler.ai.cloud.ovh.net/api/text2emotions\"))",
+      "        .POST(HttpRequest.BodyPublishers.ofString(\"I love Java\"))",
+      "        .header(\"Content-Type\", \"application/json\")",
+      "        .header(\"Authorization\", \"Bearer \" + System.getenv(\"OVH_AI_ENDPOINTS_ACCESS_TOKEN\"))",
+      "        .build();",
+      ""
+    ],
+    "description": "",
+    "prefix": "java-16-sentiment-request",
+    "scope": "java"
+  },
+  "java-sentiment-response": {
+    "body": [
+      "// Send the request and get the response",
+      "HttpResponse\u003cString\u003e response = client.send(request, HttpResponse.BodyHandlers.ofString());",
+      ""
+    ],
+    "description": "",
+    "prefix": "java-17-sentiment-response",
     "scope": "java"
   }
 }

@@ -95,7 +95,7 @@ snippet java-rag-chunk:
       RAGStreamingChatbot.class.getResource("/rag-files/content.txt").getFile(),
       documentParser
     );
-    DocumentSplitter splitter = DocumentSplitters.recursive(400, 0);
+    DocumentSplitter splitter = DocumentSplitters.recursive(300, 0);
 
     List<TextSegment> segments = splitter.split(document);
 
@@ -160,3 +160,62 @@ snippet java-rag-prompt:
         .onNext(_LOG::info)
         .onError(Throwable::printStackTrace)
         .start();
+
+snippet java-sentiment-dependency:
+  name: "java-sentiment-dependency"
+  prefix: "java-14-sentiment-dependency"
+  scope: "xml"
+  body: |
+    <dependency>
+      <groupId>fr.wilda.ai</groupId>
+      <artifactId>java-ai-toolkit</artifactId>
+      <version>1.0.0</version>
+    </dependency>
+
+snippet java-sentiment-http:
+  name: "java-sentiment-http"
+  prefix: "java-15-sentiment-http"
+  scope: "java"
+  body: |
+    // Create a HTTP client
+    HttpClient client = HttpClient.newHttpClient();
+
+snippet java-sentiment-request:
+  name: "java-sentiment-request"
+  prefix: "java-16-sentiment-request"
+  scope: "java"
+  body: |
+    // Create a request builder
+    HttpRequest request = HttpRequest.newBuilder()
+            .uri(URI.create("https://roberta-base-go-emotions.endpoints.kepler.ai.cloud.ovh.net/api/text2emotions"))
+            .POST(HttpRequest.BodyPublishers.ofString("I love Java"))
+            .header("Content-Type", "application/json")
+            .header("Authorization", "Bearer " + System.getenv("OVH_AI_ENDPOINTS_ACCESS_TOKEN"))
+            .build();
+
+snippet java-sentiment-response:
+  name: "java-sentiment-response"
+  prefix: "java-17-sentiment-response"
+  scope: "java"
+  body: |
+    // Send the request and get the response
+    HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
+
+snippet java-sentiment-mapper:
+  name: "java-sentiment-mapper"
+  prefix: "java-18-sentiment-mapper"
+  scope: "java"
+  body: |
+    // Deserialize the response to a Java object using Jackson
+    ObjectMapper objectMapper = new ObjectMapper();
+    Emotion responseObject = objectMapper.readValue(response.body(), Emotion.class);
+
+snippet java-sentiment-display:
+  name: "java-sentiment-display"
+  prefix: "java-19-sentiment-display"
+  scope: "java"
+  body: |
+    // Print the response status code and body
+    _LOG.debug("Status code: " + response.statusCode());
+    _LOG.debug("Response body: " + response.body());
+    _LOG.info("Emotion: " + responseObject.toEmoji());
