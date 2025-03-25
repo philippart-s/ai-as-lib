@@ -20,11 +20,11 @@
   },
   "langchain-blk-model": {
     "body": [
-      "model = ChatMistralAI(model=\"Mistral-7B-Instruct-v0.2\", ",
-      "                      api_key=os.getenv('OVH_AI_ENDPOINTS_ACCESS_TOKEN'),",
-      "                      endpoint='https://mistral-7b-instruct-v02.endpoints.kepler.ai.cloud.ovh.net/api/openai_compat/v1', ",
-      "                      temperature=0,",
-      "                      max_tokens=512)",
+      "model = ChatMistralAI(model=os.getenv('OVH_AI_ENDPOINTS_MODEL_NAME'), ",
+      "                        api_key=os.getenv('OVH_AI_ENDPOINTS_ACCESS_TOKEN'),",
+      "                        endpoint=os.getenv('OVH_AI_ENDPOINTS_MODEL_URL'), ",
+      "                        temperature=0,",
+      "                        max_tokens=512)",
       ""
     ],
     "description": "",
@@ -57,12 +57,12 @@
   },
   "simple-request": {
     "body": [
-      "url = \"https://mistral-7b-instruct-v02.endpoints.kepler.ai.cloud.ovh.net/api/openai_compat/v1/chat/completions\"",
+      "url = f\"{os.getenv('OVH_AI_ENDPOINTS_MODEL_URL')}/chat/completions\"",
       "payload = {",
       "    \"max_tokens\": 512,",
       "    \"messages\": [",
       "    ],",
-      "    \"model\": \"Mistral-7B-Instruct-v0.2\",",
+      "    \"model\": os.getenv('OVH_AI_ENDPOINTS_MODEL_NAME'),",
       "    \"temperature\": 0,",
       "}",
       ""
@@ -87,7 +87,6 @@
     "body": [
       "{",
       "  \"content\": \"You are Nestor, a virtual assistant. Answer to the question.\",",
-      "  \"name\": \"Nestor\",",
       "  \"role\": \"system\"",
       "},",
       ""

@@ -171,3 +171,5 @@ node_modules/
 # Quarkus
 .quarkus/
 
+# SliDesk
+out/

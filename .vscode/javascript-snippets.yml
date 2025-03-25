@@ -12,10 +12,9 @@ snippet js-str-model:
   scope: "javascript"
   body: |
     const model = new ChatMistralAI({
-      modelName: "Mistral-7B-Instruct-v0.2",
-      model: "Mistral-7B-Instruct-v0.2",
+      modelName: process.env.OVH_AI_ENDPOINTS_MODEL_NAME,
       apiKey: process.env.OVH_AI_ENDPOINTS_ACCESS_TOKEN,
-      serverURL: "https://mistral-7b-instruct-v02.endpoints.kepler.ai.cloud.ovh.net/api/openai_compat",
+      serverURL: "https://mistral-7b-instruct-v0-3.endpoints.kepler.ai.cloud.ovh.net/api/openai_compat",
       temperature:0,
       maxTokens: 512
     });

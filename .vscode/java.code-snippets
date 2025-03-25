@@ -53,12 +53,12 @@
   "java-mem-model": {
     "body": [
       "MistralAiStreamingChatModel streamingChatModel = MistralAiStreamingChatModel.builder()",
-      "    .apiKey(System.getenv(\"OVH_AI_ENDPOINTS_ACCESS_TOKEN\"))",
-      "    .modelName(\"Mistral-7B-Instruct-v0.2\")",
-      "    .baseUrl(",
-      "        \"https://mistral-7b-instruct-v02.endpoints.kepler.ai.cloud.ovh.net/api/openai_compat/v1\")",
-      "    .maxTokens(512)",
-      ".build();",
+      "        .apiKey(System.getenv(\"OVH_AI_ENDPOINTS_ACCESS_TOKEN\"))",
+      "        .modelName(System.getenv(\"OVH_AI_ENDPOINTS_MODEL_NAME\"))",
+      "        .baseUrl(",
+      "                System.getenv(\"OVH_AI_ENDPOINTS_MODEL_URL\"))",
+      "        .maxTokens(512)",
+      "        .build();",
       ""
     ],
     "description": "",
@@ -132,8 +132,10 @@
   "java-rag-embed": {
     "body": [
       "// Do the embeddings and store them in an embedding store",
-      "EmbeddingModel embeddingModel = OvhAiEmbeddingModel.withApiKey(OVHCLOUD_API_KEY);",
-      "List\u003cEmbedding\u003e embeddings = embeddingModel.embedAll(segments).content();",
+      "EmbeddingModel embeddingModel = OvhAiEmbeddingModel.builder()",
+      "        .apiKey(OVHCLOUD_API_KEY)",
+      "        .baseUrl(System.getenv(\"OVH_AI_ENDPOINTS_EMBEDDING_MODEL_URL\"))",
+      "        .build();",
       ""
     ],
     "description": "",
@@ -143,13 +145,13 @@
   "java-rag-model": {
     "body": [
       "MistralAiStreamingChatModel streamingChatModel = MistralAiStreamingChatModel.builder()",
-      "  .apiKey(OVHCLOUD_API_KEY)",
-      "  .modelName(\"Mistral-7B-Instruct-v0.2\")",
-      "  .baseUrl(",
-      "    \"https://mistral-7b-instruct-v02.endpoints.kepler.ai.cloud.ovh.net/api/openai_compat/v1\"",
-      "  )",
-      "  .maxTokens(512)",
-      "  .build();",
+      "        .apiKey(OVHCLOUD_API_KEY)",
+      "        .modelName(System.getenv(\"OVH_AI_ENDPOINTS_MODEL_NAME\"))",
+      "        .baseUrl(",
+      "                System.getenv(\"OVH_AI_ENDPOINTS_MODEL_URL\")",
+      "        )",
+      "        .maxTokens(512)",
+      "        .build();",
       ""
     ],
     "description": "",
@@ -238,7 +240,7 @@
     "body": [
       "// Create a request builder",
       "HttpRequest request = HttpRequest.newBuilder()",
-      "        .uri(URI.create(\"https://roberta-base-go-emotions.endpoints.kepler.ai.cloud.ovh.net/api/text2emotions\"))",
+      "        .uri(URI.create(System.getenv(\"OVH_AI_ENDPOINTS_SENTIMENT_MODEL_URL\")))",
       "        .POST(HttpRequest.BodyPublishers.ofString(\"I love Java\"))",
       "        .header(\"Content-Type\", \"application/json\")",
       "        .header(\"Authorization\", \"Bearer \" + System.getenv(\"OVH_AI_ENDPOINTS_ACCESS_TOKEN\"))",
