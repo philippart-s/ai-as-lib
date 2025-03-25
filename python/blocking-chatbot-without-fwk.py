@@ -13,7 +13,6 @@ payload = {
         # py-03-simple-sys-msg
         {
             "content": "You are Nestor, a virtual assistant. Answer to the question.",
-            #"name": "Nestor",
             "role": "system"
         },
         # py-04-simple-usr-msg
