@@ -6,14 +6,13 @@ import os
 load_dotenv(dotenv_path='../.env')
 
 # py-02-simple-request
-url = "https://mistral-7b-instruct-v02.endpoints.kepler.ai.cloud.ovh.net/api/openai_compat/v1/chat/completions"
+url = f"{os.getenv('OVH_AI_ENDPOINTS_MODEL_URL')}/chat/completions"
 payload = {
     "max_tokens": 512,
     "messages": [
         # py-03-simple-sys-msg
         {
             "content": "You are Nestor, a virtual assistant. Answer to the question.",
-            "name": "Nestor",
             "role": "system"
         },
         # py-04-simple-usr-msg
@@ -22,7 +21,7 @@ payload = {
             "role": "user"
         }
     ],
-    "model": "Mistral-7B-Instruct-v0.2",
+    "model": os.getenv('OVH_AI_ENDPOINTS_MODEL_NAME'),
     "temperature": 0,
 }
 

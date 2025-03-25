@@ -1,6 +1,8 @@
 #!/bin/bash
 
-bat -P -r 8: $(basename "$0")
+clear
+
+bat -P -r 10: $(basename "$0")
 
 # Set some environment variables to use AI Endpoints
 source ../.env

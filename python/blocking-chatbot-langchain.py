@@ -8,9 +8,9 @@ from langchain_core.prompts import ChatPromptTemplate
 load_dotenv(dotenv_path='../.env')
 
 # py-08-langchain-blk-model
-model = ChatMistralAI(model="Mistral-7B-Instruct-v0.2", 
+model = ChatMistralAI(model=os.getenv('OVH_AI_ENDPOINTS_MODEL_NAME'), 
                         api_key=os.getenv('OVH_AI_ENDPOINTS_ACCESS_TOKEN'),
-                        endpoint='https://mistral-7b-instruct-v02.endpoints.kepler.ai.cloud.ovh.net/api/openai_compat/v1', 
+                        endpoint=os.getenv('OVH_AI_ENDPOINTS_MODEL_URL'), 
                         temperature=0,
                         max_tokens=512)
 

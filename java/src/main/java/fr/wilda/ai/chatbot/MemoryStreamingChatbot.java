@@ -23,9 +23,9 @@ public class MemoryStreamingChatbot {
         // java-03-mem-model
         MistralAiStreamingChatModel streamingChatModel = MistralAiStreamingChatModel.builder()
                 .apiKey(System.getenv("OVH_AI_ENDPOINTS_ACCESS_TOKEN"))
-                .modelName("Mistral-7B-Instruct-v0.2")
+                .modelName(System.getenv("OVH_AI_ENDPOINTS_MODEL_NAME"))
                 .baseUrl(
-                        "https://mistral-7b-instruct-v02.endpoints.kepler.ai.cloud.ovh.net/api/openai_compat/v1")
+                        System.getenv("OVH_AI_ENDPOINTS_MODEL_URL"))
                 .maxTokens(512)
                 .build();
 
