@@ -109,7 +109,8 @@ snippet java-rag-embed:
             .apiKey(OVHCLOUD_API_KEY)
             .baseUrl(System.getenv("OVH_AI_ENDPOINTS_EMBEDDING_MODEL_URL"))
             .build();
-
+    List<Embedding> embeddings = embeddingModel.embedAll(segments).content();
+    
 snippet java-rag-store:
   name: "java-rag-store"
   prefix: "java-10-rag-store"
