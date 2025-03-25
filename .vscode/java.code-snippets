@@ -136,6 +136,7 @@
       "        .apiKey(OVHCLOUD_API_KEY)",
       "        .baseUrl(System.getenv(\"OVH_AI_ENDPOINTS_EMBEDDING_MODEL_URL\"))",
       "        .build();",
+      "List\u003cEmbedding\u003e embeddings = embeddingModel.embedAll(segments).content();",
       ""
     ],
     "description": "",
