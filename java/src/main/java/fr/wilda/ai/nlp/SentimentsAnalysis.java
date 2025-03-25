@@ -21,7 +21,7 @@ public class SentimentsAnalysis {
         // java-16-sentiment-request
         // Create a request builder
         HttpRequest request = HttpRequest.newBuilder()
-                .uri(URI.create("https://roberta-base-go-emotions.endpoints.kepler.ai.cloud.ovh.net/api/text2emotions"))
+                .uri(URI.create(System.getenv("OVH_AI_ENDPOINTS_SENTIMENT_MODEL_URL")))
                 .POST(HttpRequest.BodyPublishers.ofString("I love Java"))
                 .header("Content-Type", "application/json")
                 .header("Authorization", "Bearer " + System.getenv("OVH_AI_ENDPOINTS_ACCESS_TOKEN"))

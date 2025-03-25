@@ -49,7 +49,11 @@ public class RAGStreamingChatbot {
 
         // java-09-rag-embed
         // Do the embeddings and store them in an embedding store
-        EmbeddingModel embeddingModel = OvhAiEmbeddingModel.withApiKey(OVHCLOUD_API_KEY);
+        EmbeddingModel embeddingModel = OvhAiEmbeddingModel.builder()
+                .apiKey(OVHCLOUD_API_KEY)
+                .baseUrl(System.getenv("OVH_AI_ENDPOINTS_EMBEDDING_MODEL_URL"))
+                .build();
+
         List<Embedding> embeddings = embeddingModel.embedAll(segments).content();
 
         // java-10-rag-store
@@ -65,9 +69,9 @@ public class RAGStreamingChatbot {
         // java-11-rag-model
         MistralAiStreamingChatModel streamingChatModel = MistralAiStreamingChatModel.builder()
                 .apiKey(OVHCLOUD_API_KEY)
-                .modelName("Mistral-7B-Instruct-v0.2")
+                .modelName(System.getenv("OVH_AI_ENDPOINTS_MODEL_NAME"))
                 .baseUrl(
-                        "https://mistral-7b-instruct-v02.endpoints.kepler.ai.cloud.ovh.net/api/openai_compat/v1"
+                        System.getenv("OVH_AI_ENDPOINTS_MODEL_URL")
                 )
                 .maxTokens(512)
                 .build();
