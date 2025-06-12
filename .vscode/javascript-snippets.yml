@@ -2,8 +2,8 @@ snippet js-str-dependencies:
   name: "js-str-dependencies"
   prefix: "js-01-str-dependencies"
   body: |
-      "langchain": "0.3.15",
-      "@langchain/mistralai": "0.2.0",
+      "langchain": "0.3.28",
+      "@langchain/mistralai": "0.2.1",
       "dotenv" :"16.4.5"
 
 snippet js-str-model:

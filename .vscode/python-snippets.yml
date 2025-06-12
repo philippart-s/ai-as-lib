@@ -74,9 +74,9 @@ snippet langchain-blk-requirements:
   prefix: "07-langchain-blk-requirements"
   body: |
     # Some usefull tools from LangChain
-    langchain-core==0.3.33
+    langchain-core==0.3.65
     # To use mistral with LangChain
-    langchain-mistralai==0.2.6 
+    langchain-mistralai==0.2.10 
 
 snippet langchain-blk-model:
   name: "langchain-blk-model"
