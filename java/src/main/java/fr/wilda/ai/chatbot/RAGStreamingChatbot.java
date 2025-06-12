@@ -63,7 +63,7 @@ public class RAGStreamingChatbot {
                 .embeddingStore(embeddingStore)
                 .embeddingModel(embeddingModel)
                 .maxResults(5)
-                .minScore(0.9)
+                .minScore(0.3)
                 .build();
 
         // java-11-rag-model
@@ -79,7 +79,7 @@ public class RAGStreamingChatbot {
         // java-12-rag-assistant
         Assistant assistant = AiServices
                 .builder(Assistant.class)
-                .streamingChatLanguageModel(streamingChatModel)
+                .streamingChatModel(streamingChatModel)
                 .contentRetriever(contentRetriever)
                 .build();
 
@@ -89,7 +89,7 @@ public class RAGStreamingChatbot {
         TokenStream tokenStream = assistant.chat("Can you explain me what is AI Endpoints?");
         _LOG.info("🤖: ");
         tokenStream
-                .onNext(_LOG::info)
+                .onPartialResponse(_LOG::info)
                 .onError(Throwable::printStackTrace)
                 .start();
     }

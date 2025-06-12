@@ -34,7 +34,7 @@ public class MemoryStreamingChatbot {
 
         // java-05-mem-assistant
         Assistant assistant = AiServices.builder(Assistant.class)
-                .streamingChatLanguageModel(streamingChatModel)
+                .streamingChatModel(streamingChatModel)
                 .chatMemory(chatMemory)
                 .build();
 
@@ -43,12 +43,12 @@ public class MemoryStreamingChatbot {
         TokenStream tokenStream = assistant.chat("My name is Stéphane.");
         _LOG.info("🤖: ");
         tokenStream
-                .onNext(_LOG::info)
-                .onComplete(token -> {
+                .onPartialResponse(_LOG::info)
+                .onCompleteResponse(token -> {
                     _LOG.info("\n💬: Do you remember what is my name?\n");
                     _LOG.info("🤖: ");
                     assistant.chat("Do you remember what is my name?")
-                            .onNext(_LOG::info)
+                            .onPartialResponse(_LOG::info)
                             .onError(Throwable::printStackTrace).start();
                 })
                 .onError(Throwable::printStackTrace).start();

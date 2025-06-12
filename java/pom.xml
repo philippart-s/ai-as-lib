@@ -16,7 +16,8 @@
     <maven.compiler.source>21</maven.compiler.source>
     <maven.compiler.target>21</maven.compiler.target>
     <maven.compiler.release>21</maven.compiler.release>
-    <langchain4j.version>0.34.0</langchain4j.version>
+    <langchain4j.version>1.0.1</langchain4j.version>
+    <langchain4j.provider.version>1.0.1-beta6</langchain4j.provider.version>
   </properties>
 
   <dependencies>
@@ -30,14 +31,14 @@
     <dependency>
       <groupId>dev.langchain4j</groupId>
       <artifactId>langchain4j-mistral-ai</artifactId>
-      <version>${langchain4j.version}</version>
+      <version>${langchain4j.provider.version}</version>
     </dependency>
 
     <!-- java-07-rag-dependency -->
     <dependency>
       <groupId>dev.langchain4j</groupId>
       <artifactId>langchain4j-ovh-ai</artifactId>
-      <version>${langchain4j.version}</version>
+      <version>${langchain4j.provider.version}</version>
     </dependency>
 
     <dependency>
