@@ -2,7 +2,7 @@
   "java-mem-assistant": {
     "body": [
       "Assistant assistant = AiServices.builder(Assistant.class)",
-      "    .streamingChatLanguageModel(streamingChatModel)",
+      "    .streamingChatModel(streamingChatModel)",
       "    .chatMemory(chatMemory)",
       ".build();",
       ""
@@ -22,7 +22,7 @@
       "\u003cdependency\u003e",
       "  \u003cgroupId\u003edev.langchain4j\u003c/groupId\u003e",
       "  \u003cartifactId\u003elangchain4j-mistral-ai\u003c/artifactId\u003e",
-      "  \u003cversion\u003e${langchain4j.version}\u003c/version\u003e",
+      "  \u003cversion\u003e${langchain4j.provider.version}\u003c/version\u003e",
       "\u003c/dependency\u003e",
       ""
     ],
@@ -71,12 +71,12 @@
       "TokenStream tokenStream = assistant.chat(\"My name is Stéphane.\");",
       "_LOG.info(\"🤖: \");",
       "tokenStream",
-      "    .onNext(_LOG::info)",
-      "    .onComplete(token -\u003e {",
+      "    .onPartialResponse(_LOG::info)",
+      "    .onCompleteResponse(token -\u003e {",
       "      _LOG.info(\"\\n💬: Do you remember what is my name?\\n\");",
       "      _LOG.info(\"🤖: \");",
       "      assistant.chat(\"Do you remember what is my name?\")",
-      "          .onNext(_LOG::info)",
+      "          .onPartialResponse(_LOG::info)",
       "          .onError(Throwable::printStackTrace).start();",
       "    })",
       "    .onError(Throwable::printStackTrace).start();",
@@ -121,7 +121,7 @@
       "\u003cdependency\u003e",
       "  \u003cgroupId\u003edev.langchain4j\u003c/groupId\u003e",
       "  \u003cartifactId\u003elangchain4j-ovh-ai\u003c/artifactId\u003e",
-      "  \u003cversion\u003e${langchain4j.version}\u003c/version\u003e",
+      "  \u003cversion\u003e${langchain4j.provider.version}\u003c/version\u003e",
       "\u003c/dependency\u003e",
       ""
     ],

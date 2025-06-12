@@ -12,7 +12,7 @@ snippet java-mem-dependencies:
     <dependency>
       <groupId>dev.langchain4j</groupId>
       <artifactId>langchain4j-mistral-ai</artifactId>
-      <version>${langchain4j.version}</version>
+      <version>${langchain4j.provider.version}</version>
     </dependency>
 
 snippet java-mem-interface:
@@ -50,7 +50,7 @@ snippet java-mem-assistant:
   scope: "java"
   body: |
     Assistant assistant = AiServices.builder(Assistant.class)
-        .streamingChatLanguageModel(streamingChatModel)
+        .streamingChatModel(streamingChatModel)
         .chatMemory(chatMemory)
     .build();
 
@@ -63,12 +63,12 @@ snippet java-mem-prompt:
     TokenStream tokenStream = assistant.chat("My name is Stéphane.");
     _LOG.info("🤖: ");
     tokenStream
-        .onNext(_LOG::info)
-        .onComplete(token -> {
+        .onPartialResponse(_LOG::info)
+        .onCompleteResponse(token -> {
           _LOG.info("\n💬: Do you remember what is my name?\n");
           _LOG.info("🤖: ");
           assistant.chat("Do you remember what is my name?")
-              .onNext(_LOG::info)
+              .onPartialResponse(_LOG::info)
               .onError(Throwable::printStackTrace).start();
         })
         .onError(Throwable::printStackTrace).start();
@@ -81,7 +81,7 @@ snippet java-rag-dependency:
     <dependency>
       <groupId>dev.langchain4j</groupId>
       <artifactId>langchain4j-ovh-ai</artifactId>
-      <version>${langchain4j.version}</version>
+      <version>${langchain4j.provider.version}</version>
     </dependency>
 
 snippet java-rag-chunk:
