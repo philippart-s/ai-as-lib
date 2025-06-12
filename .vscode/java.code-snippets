@@ -107,7 +107,7 @@
       "  RAGStreamingChatbot.class.getResource(\"/rag-files/content.txt\").getFile(),",
       "  documentParser",
       ");",
-      "DocumentSplitter splitter = DocumentSplitters.recursive(300, 0);",
+      "DocumentSplitter splitter = DocumentSplitters.recursive(400, 0);",
       "",
       "List\u003cTextSegment\u003e segments = splitter.split(document);",
       ""
@@ -183,7 +183,7 @@
       "  .embeddingStore(embeddingStore)",
       "  .embeddingModel(embeddingModel)",
       "  .maxResults(5)",
-      "  .minScore(0.9)",
+      "  .minScore(0.3)",
       ".build();",
       ""
     ],

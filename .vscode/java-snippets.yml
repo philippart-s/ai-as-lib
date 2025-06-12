@@ -95,7 +95,7 @@ snippet java-rag-chunk:
       RAGStreamingChatbot.class.getResource("/rag-files/content.txt").getFile(),
       documentParser
     );
-    DocumentSplitter splitter = DocumentSplitters.recursive(300, 0);
+    DocumentSplitter splitter = DocumentSplitters.recursive(400, 0);
 
     List<TextSegment> segments = splitter.split(document);
 
@@ -110,7 +110,7 @@ snippet java-rag-embed:
             .baseUrl(System.getenv("OVH_AI_ENDPOINTS_EMBEDDING_MODEL_URL"))
             .build();
     List<Embedding> embeddings = embeddingModel.embedAll(segments).content();
-    
+
 snippet java-rag-store:
   name: "java-rag-store"
   prefix: "java-10-rag-store"
@@ -122,7 +122,7 @@ snippet java-rag-store:
       .embeddingStore(embeddingStore)
       .embeddingModel(embeddingModel)
       .maxResults(5)
-      .minScore(0.9)
+      .minScore(0.3)
     .build();
 
 snippet java-rag-model:
