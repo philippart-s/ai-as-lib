@@ -3,10 +3,11 @@
     "body": [
       "response = chain.invoke(\"What is OVHcloud?\")",
       "",
+      "print(f\"🤖: {response.content}\")",
       "print(f\"🤖: {response.content}\")"
     ],
     "description": "",
-    "prefix": "py-11-langchain-blk-call",
+    "prefix": "11-langchain-blk-call",
     "scope": "python"
   },
   "langchain-blk-chain": {
@@ -15,7 +16,7 @@
       ""
     ],
     "description": "",
-    "prefix": "py-10-langchain-blk-chain",
+    "prefix": "10-langchain-blk-chain",
     "scope": "python"
   },
   "langchain-blk-model": {
@@ -28,7 +29,7 @@
       ""
     ],
     "description": "",
-    "prefix": "py-08-langchain-blk-model",
+    "prefix": "08-langchain-blk-model",
     "scope": "python"
   },
   "langchain-blk-prompt": {
@@ -40,19 +41,19 @@
       ""
     ],
     "description": "",
-    "prefix": "py-09-langchain-blk-prompt",
+    "prefix": "09-langchain-blk-prompt",
     "scope": "python"
   },
   "langchain-blk-requirements": {
     "body": [
       "# Some usefull tools from LangChain",
-      "langchain-core==0.3.33",
+      "langchain-core==0.3.65",
       "# To use mistral with LangChain",
-      "langchain-mistralai==0.2.6 ",
+      "langchain-mistralai==0.2.10 ",
       ""
     ],
     "description": "",
-    "prefix": "py-07-langchain-blk-requirements",
+    "prefix": "07-langchain-blk-requirements",
     "scope": ""
   },
   "simple-request": {
@@ -68,7 +69,7 @@
       ""
     ],
     "description": "",
-    "prefix": "py-02-simple-request",
+    "prefix": "02-simple-request",
     "scope": "python"
   },
   "simple-requirements": {
@@ -80,7 +81,7 @@
       ""
     ],
     "description": "",
-    "prefix": "py-01-simple-requirements",
+    "prefix": "01-simple-requirements",
     "scope": ""
   },
   "simple-system-message": {
@@ -92,7 +93,7 @@
       ""
     ],
     "description": "",
-    "prefix": "py-03-simple-sys-msg",
+    "prefix": "03-simple-sys-msg",
     "scope": "python"
   },
   "simple-user-message": {
@@ -104,7 +105,7 @@
       ""
     ],
     "description": "",
-    "prefix": "py-04-simple-usr-msg",
+    "prefix": "04-simple-usr-msg",
     "scope": "python"
   },
   "snippet simple-call": {
@@ -124,7 +125,7 @@
       ""
     ],
     "description": "",
-    "prefix": "py-06-simple-call",
+    "prefix": "06-simple-call",
     "scope": "python"
   },
   "snippet simple-token": {
@@ -136,7 +137,7 @@
       ""
     ],
     "description": "",
-    "prefix": "py-05-simple-token",
+    "prefix": "05-simple-token",
     "scope": "python"
   }
 }
