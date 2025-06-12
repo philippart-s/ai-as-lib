@@ -183,7 +183,7 @@
       "  .embeddingStore(embeddingStore)",
       "  .embeddingModel(embeddingModel)",
       "  .maxResults(5)",
-      "  .minScore(0.9)",
+      "  .minScore(0.3)",
       ".build();",
       ""
     ],
