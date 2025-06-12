@@ -337,6 +337,94 @@ snippet java-27:
     }
     scanner.close();
 
+snippet java-28-MCP:
+  name: "java-28-MCP"
+  prefix: "java-28-MCP"
+  scope: "xml"
+  body: |
+    <dependency>
+      <groupId>dev.langchain4j</groupId>
+      <artifactId>langchain4j-mcp</artifactId>
+      <version>${langchain4j.provider.version}</version>
+    </dependency>
+
+snippet java-29:
+  name: "java-29"
+  prefix: "java-29"
+  scope: "java"
+  body: |
+    // Simple chatbot definition with AI Services from LangChain4J
+    public interface Bot {
+        String chat(String prompt);
+    }
+
+snippet java-30:
+  name: "java-30"
+  prefix: "java-30"
+  scope: "java"
+  body: |
+    // Mistral model from OVHcloud AI Endpoints
+    ChatModel chatModel = MistralAiChatModel.builder()
+            .apiKey(System.getenv("OVH_AI_ENDPOINTS_ACCESS_TOKEN"))
+            .baseUrl(System.getenv("OVH_AI_ENDPOINTS_MODEL_URL"))
+            .modelName(System.getenv("OVH_AI_ENDPOINTS_MODEL_NAME"))
+            .logRequests(false)
+            .logResponses(false)
+            .build();
+
+snippet java-31:
+  name: "java-31"
+  prefix: "java-31"
+  scope: "java"
+  body: |
+    // Configure the MCP server to use
+    McpTransport transport = new HttpMcpTransport.Builder()
+            // https://xxxx/mcp/sse
+            .sseUrl(System.getenv("MCP_SERVER_URL"))
+            .logRequests(false)
+            .logResponses(false)
+            .build();
+
+snippet java-32:
+  name: "java-32"
+  prefix: "java-32"
+  scope: "java"
+  body: |
+    // Create the MCP client for the given MCP server
+    McpClient mcpClient = new DefaultMcpClient.Builder()
+            .transport(transport)
+            .build();
+
+snippet java-33:
+  name: "java-33"
+  prefix: "java-33"
+  scope: "java"
+  body: |
+    // Configure the tools list for the LLM
+    McpToolProvider toolProvider = McpToolProvider.builder()
+            .mcpClients(mcpClient)
+            .build();
+
+snippet java-34:
+  name: "java-34"
+  prefix: "java-34"
+  scope: "java"
+  body: |
+    // Create the chatbot with the given LLM and tools list
+    Bot bot = AiServices.builder(Bot.class)
+            .chatModel(chatModel)
+            .toolProvider(toolProvider)
+            .build();
+
+snippet java-35:
+  name: "java-35"
+  prefix: "java-35"
+  scope: "java"
+  body: |
+    // Play with the chatbot 🤖
+    String response = bot.chat("Can I have some details about my OVHcloud account?");
+    _LOG.info("RESPONSE: {}",  response);
+
 snippet quarkus-ai-langchain4j:
   name: "quarkus-ai-langchain4j"
   prefix: "quarkus-01-ai-langchain4j"
@@ -401,3 +489,39 @@ snippet quarkus-ws-cors:
     # Disable CORS
     quarkus.http.cors=true
     %dev.quarkus.http.cors.origins=/.*/
+
+snippet quarkus-08:
+  name: "quarkus-08"
+  prefix: "quarkus-08"
+  scope: "xml"
+  body: |
+    <dependency>
+        <groupId>io.quarkiverse.mcp</groupId>
+        <artifactId>quarkus-mcp-server-sse</artifactId>
+        <version>1.2.1</version>
+    </dependency>
+
+snippet quarkus-09:
+  name: "quarkus-09"
+  prefix: "quarkus-09"
+  body: |
+    # OVHcloud parameter
+    ovhcloud.consumer=${OVH_CONSUMER_KEY}
+    ovhcloud.application=${OVH_APPLICATION_KEY}
+    ovhcloud.projectId=${OVH_CLOUD_PROJECT_SERVICE}
+    
+    # RestClient parameter
+    quarkus.rest-client."com.ovhcloud.sdk.service.OVHcloudMe".url=https://eu.api.ovh.com/
+
+snippet quarkus-10:
+  name: "quarkus-10"
+  prefix: "quarkus-10"
+  scope: "java"
+  body: |
+    @Tool(description = "Tool to manage the OVHcloud public cloud user.")
+    ToolResponse getUserDetails() {
+        Long ovhTimestamp = System.currentTimeMillis() / 1000;
+        return ToolResponse.success(
+                new TextContent(ovhcloudMe.getMe(OVHcloudSignatureHelper.signature("me", ovhTimestamp),
+                        Long.toString(ovhTimestamp)).toString()));
+    }

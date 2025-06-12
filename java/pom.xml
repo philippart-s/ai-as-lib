@@ -32,6 +32,8 @@
     </dependency>
 
     <!-- java-14-sentiment-dependency -->
+
+    <!-- java-28-MCP -->
   </dependencies>
 
   <build>

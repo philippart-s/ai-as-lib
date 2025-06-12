@@ -129,6 +129,110 @@
     "prefix": "java-27",
     "scope": "java"
   },
+  "java-28-MCP": {
+    "body": [
+      "\u003cdependency\u003e",
+      "  \u003cgroupId\u003edev.langchain4j\u003c/groupId\u003e",
+      "  \u003cartifactId\u003elangchain4j-mcp\u003c/artifactId\u003e",
+      "  \u003cversion\u003e${langchain4j.provider.version}\u003c/version\u003e",
+      "\u003c/dependency\u003e",
+      ""
+    ],
+    "description": "",
+    "prefix": "java-28-MCP",
+    "scope": "xml"
+  },
+  "java-29": {
+    "body": [
+      "// Simple chatbot definition with AI Services from LangChain4J",
+      "public interface Bot {",
+      "    String chat(String prompt);",
+      "}",
+      ""
+    ],
+    "description": "",
+    "prefix": "java-29",
+    "scope": "java"
+  },
+  "java-30": {
+    "body": [
+      "// Mistral model from OVHcloud AI Endpoints",
+      "ChatModel chatModel = MistralAiChatModel.builder()",
+      "        .apiKey(System.getenv(\"OVH_AI_ENDPOINTS_ACCESS_TOKEN\"))",
+      "        .baseUrl(System.getenv(\"OVH_AI_ENDPOINTS_MODEL_URL\"))",
+      "        .modelName(System.getenv(\"OVH_AI_ENDPOINTS_MODEL_NAME\"))",
+      "        .logRequests(false)",
+      "        .logResponses(false)",
+      "        .build();",
+      ""
+    ],
+    "description": "",
+    "prefix": "java-30",
+    "scope": "java"
+  },
+  "java-31": {
+    "body": [
+      "// Configure the MCP server to use",
+      "McpTransport transport = new HttpMcpTransport.Builder()",
+      "        // https://xxxx/mcp/sse",
+      "        .sseUrl(System.getenv(\"MCP_SERVER_URL\"))",
+      "        .logRequests(false)",
+      "        .logResponses(false)",
+      "        .build();",
+      ""
+    ],
+    "description": "",
+    "prefix": "java-31",
+    "scope": "java"
+  },
+  "java-32": {
+    "body": [
+      "// Create the MCP client for the given MCP server",
+      "McpClient mcpClient = new DefaultMcpClient.Builder()",
+      "        .transport(transport)",
+      "        .build();",
+      ""
+    ],
+    "description": "",
+    "prefix": "java-32",
+    "scope": "java"
+  },
+  "java-33": {
+    "body": [
+      "// Configure the tools list for the LLM",
+      "McpToolProvider toolProvider = McpToolProvider.builder()",
+      "        .mcpClients(mcpClient)",
+      "        .build();",
+      ""
+    ],
+    "description": "",
+    "prefix": "java-33",
+    "scope": "java"
+  },
+  "java-34": {
+    "body": [
+      "// Create the chatbot with the given LLM and tools list",
+      "Bot bot = AiServices.builder(Bot.class)",
+      "        .chatModel(chatModel)",
+      "        .toolProvider(toolProvider)",
+      "        .build();",
+      ""
+    ],
+    "description": "",
+    "prefix": "java-34",
+    "scope": "java"
+  },
+  "java-35": {
+    "body": [
+      "// Play with the chatbot 🤖",
+      "String response = bot.chat(\"Can I have some details about my OVHcloud account?\");",
+      "_LOG.info(\"RESPONSE: {}\",  response);",
+      ""
+    ],
+    "description": "",
+    "prefix": "java-35",
+    "scope": "java"
+  },
   "java-mem-assistant": {
     "body": [
       "Assistant assistant = AiServices.builder(Assistant.class)",
@@ -392,6 +496,49 @@
     "prefix": "java-17-sentiment-response",
     "scope": "java"
   },
+  "quarkus-08": {
+    "body": [
+      "\u003cdependency\u003e",
+      "    \u003cgroupId\u003eio.quarkiverse.mcp\u003c/groupId\u003e",
+      "    \u003cartifactId\u003equarkus-mcp-server-sse\u003c/artifactId\u003e",
+      "    \u003cversion\u003e1.2.1\u003c/version\u003e",
+      "\u003c/dependency\u003e",
+      ""
+    ],
+    "description": "",
+    "prefix": "quarkus-08",
+    "scope": "xml"
+  },
+  "quarkus-09": {
+    "body": [
+      "# OVHcloud parameter",
+      "ovhcloud.consumer=${OVH_CONSUMER_KEY}",
+      "ovhcloud.application=${OVH_APPLICATION_KEY}",
+      "ovhcloud.projectId=${OVH_CLOUD_PROJECT_SERVICE}",
+      "",
+      "# RestClient parameter",
+      "quarkus.rest-client.\"com.ovhcloud.sdk.service.OVHcloudMe\".url=https://eu.api.ovh.com/",
+      ""
+    ],
+    "description": "",
+    "prefix": "quarkus-09",
+    "scope": ""
+  },
+  "quarkus-10": {
+    "body": [
+      "@Tool(description = \"Tool to manage the OVHcloud public cloud user.\")",
+      "ToolResponse getUserDetails() {",
+      "    Long ovhTimestamp = System.currentTimeMillis() / 1000;",
+      "    return ToolResponse.success(",
+      "            new TextContent(ovhcloudMe.getMe(OVHcloudSignatureHelper.signature(\"me\", ovhTimestamp),",
+      "                    Long.toString(ovhTimestamp)).toString()));",
+      "}",
+      ""
+    ],
+    "description": "",
+    "prefix": "quarkus-10",
+    "scope": "java"
+  },
   "quarkus-ai-ai-service": {
     "body": [
       "@SessionScoped",
@@ -441,7 +588,8 @@
     "body": [
       "# Disable CORS",
       "quarkus.http.cors=true",
-      "%dev.quarkus.http.cors.origins=/.*/"
+      "%dev.quarkus.http.cors.origins=/.*/",
+      ""
     ],
     "description": "",
     "prefix": "quarkus-07-ws-cors",
