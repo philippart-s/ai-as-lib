@@ -509,19 +509,19 @@
     "prefix": "quarkus-08",
     "scope": "xml"
   },
-  "quarkus-09": {
+  "quarkus-09-mcp": {
     "body": [
       "# OVHcloud parameter",
-      "ovhcloud.consumer=${OVH_CONSUMER_KEY}",
-      "ovhcloud.application=${OVH_APPLICATION_KEY}",
-      "ovhcloud.projectId=${OVH_CLOUD_PROJECT_SERVICE}",
+      "ovhcloud.consumer=\\${OVH_CONSUMER_KEY}",
+      "ovhcloud.application=\\${OVH_APPLICATION_KEY}",
+      "ovhcloud.projectId=\\${OVH_CLOUD_PROJECT_SERVICE}",
       "",
       "# RestClient parameter",
       "quarkus.rest-client.\"com.ovhcloud.sdk.service.OVHcloudMe\".url=https://eu.api.ovh.com/",
       ""
     ],
     "description": "",
-    "prefix": "quarkus-09",
+    "prefix": "quarkus-09-mcp",
     "scope": ""
   },
   "quarkus-10": {
