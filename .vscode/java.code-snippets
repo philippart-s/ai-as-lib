@@ -129,7 +129,20 @@
     "prefix": "java-27",
     "scope": "java"
   },
-  "java-28": {
+  "java-28-MCP": {
+    "body": [
+      "\u003cdependency\u003e",
+      "  \u003cgroupId\u003edev.langchain4j\u003c/groupId\u003e",
+      "  \u003cartifactId\u003elangchain4j-mcp\u003c/artifactId\u003e",
+      "  \u003cversion\u003e${langchain4j.provider.version}\u003c/version\u003e",
+      "\u003c/dependency\u003e",
+      ""
+    ],
+    "description": "",
+    "prefix": "java-28-MCP",
+    "scope": "xml"
+  },
+  "java-29": {
     "body": [
       "// Simple chatbot definition with AI Services from LangChain4J",
       "public interface Bot {",
@@ -138,10 +151,10 @@
       ""
     ],
     "description": "",
-    "prefix": "java-28",
+    "prefix": "java-29",
     "scope": "java"
   },
-  "java-29": {
+  "java-30": {
     "body": [
       "// Mistral model from OVHcloud AI Endpoints",
       "ChatModel chatModel = MistralAiChatModel.builder()",
@@ -154,10 +167,10 @@
       ""
     ],
     "description": "",
-    "prefix": "java-29",
+    "prefix": "java-30",
     "scope": "java"
   },
-  "java-30": {
+  "java-31": {
     "body": [
       "// Configure the MCP server to use",
       "McpTransport transport = new HttpMcpTransport.Builder()",
@@ -169,26 +182,14 @@
       ""
     ],
     "description": "",
-    "prefix": "java-30",
-    "scope": "java"
-  },
-  "java-31": {
-    "body": [
-      "// Create the MCP client for the given MCP server",
-      "McpClient mcpClient = new DefaultMcpClient.Builder()",
-      "        .transport(transport)",
-      "        .build();",
-      ""
-    ],
-    "description": "",
     "prefix": "java-31",
     "scope": "java"
   },
   "java-32": {
     "body": [
-      "// Configure the tools list for the LLM",
-      "McpToolProvider toolProvider = McpToolProvider.builder()",
-      "        .mcpClients(mcpClient)",
+      "// Create the MCP client for the given MCP server",
+      "McpClient mcpClient = new DefaultMcpClient.Builder()",
+      "        .transport(transport)",
       "        .build();",
       ""
     ],
@@ -198,10 +199,9 @@
   },
   "java-33": {
     "body": [
-      "// Create the chatbot with the given LLM and tools list",
-      "Bot bot = AiServices.builder(Bot.class)",
-      "        .chatModel(chatModel)",
-      "        .toolProvider(toolProvider)",
+      "// Configure the tools list for the LLM",
+      "McpToolProvider toolProvider = McpToolProvider.builder()",
+      "        .mcpClients(mcpClient)",
       "        .build();",
       ""
     ],
@@ -211,13 +211,26 @@
   },
   "java-34": {
     "body": [
+      "// Create the chatbot with the given LLM and tools list",
+      "Bot bot = AiServices.builder(Bot.class)",
+      "        .chatModel(chatModel)",
+      "        .toolProvider(toolProvider)",
+      "        .build();",
+      ""
+    ],
+    "description": "",
+    "prefix": "java-34",
+    "scope": "java"
+  },
+  "java-35": {
+    "body": [
       "// Play with the chatbot 🤖",
       "String response = bot.chat(\"Can I have some details about my OVHcloud account?\");",
       "_LOG.info(\"RESPONSE: {}\",  response);",
       ""
     ],
     "description": "",
-    "prefix": "java-34",
+    "prefix": "java-35",
     "scope": "java"
   },
   "java-mem-assistant": {
@@ -496,19 +509,19 @@
     "prefix": "quarkus-08",
     "scope": "xml"
   },
-  "quarkus-09": {
+  "quarkus-09-mcp": {
     "body": [
       "# OVHcloud parameter",
-      "ovhcloud.consumer=${OVH_CONSUMER_KEY}",
-      "ovhcloud.application=${OVH_APPLICATION_KEY}",
-      "ovhcloud.projectId=${OVH_CLOUD_PROJECT_SERVICE}",
+      "ovhcloud.consumer=\\${OVH_CONSUMER_KEY}",
+      "ovhcloud.application=\\${OVH_APPLICATION_KEY}",
+      "ovhcloud.projectId=\\${OVH_CLOUD_PROJECT_SERVICE}",
       "",
       "# RestClient parameter",
       "quarkus.rest-client.\"com.ovhcloud.sdk.service.OVHcloudMe\".url=https://eu.api.ovh.com/",
       ""
     ],
     "description": "",
-    "prefix": "quarkus-09",
+    "prefix": "quarkus-09-mcp",
     "scope": ""
   },
   "quarkus-10": {
