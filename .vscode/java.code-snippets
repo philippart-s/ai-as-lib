@@ -517,7 +517,7 @@
       "ovhcloud.projectId=\\${OVH_CLOUD_PROJECT_SERVICE}",
       "",
       "# RestClient parameter",
-      "quarkus.rest-client.\"com.ovhcloud.sdk.service.OVHcloudMe\".url=https://eu.api.ovh.com/",
+      "quarkus.rest-client.\"fr.wilda.ai.service.OVHcloudMe\".url=https://eu.api.ovh.com/",
       ""
     ],
     "description": "",

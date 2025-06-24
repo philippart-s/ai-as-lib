@@ -66,10 +66,10 @@ public class ImageGenerationChatbot {
         String userInput = "";
         Scanner scanner = new Scanner(System.in);
         while (true) {
-            _LOG.info("Enter your message: ");
+            _LOG.info("\nEnter your message: ");
             userInput = scanner.nextLine();
             if (userInput.equalsIgnoreCase("exit")) break;
-            _LOG.info("Response: " + chatBot.chat(userInput));
+            _LOG.info("\nResponse: " + chatBot.chat(userInput));
         }
         scanner.close();
     }

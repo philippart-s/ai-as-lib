@@ -8,11 +8,13 @@ config({path: '../.env'});
 
 // js-02-str-model
 const model = new ChatMistralAI({
-  modelName: process.env.OVH_AI_ENDPOINTS_MODEL_NAME,
+  model: process.env.OVH_AI_ENDPOINTS_MODEL_NAME,
   apiKey: process.env.OVH_AI_ENDPOINTS_ACCESS_TOKEN,
-  serverURL: "https://mistral-7b-instruct-v0-3.endpoints.kepler.ai.cloud.ovh.net/api/openai_compat",
-  temperature:0,
-  maxTokens: 512
+  endpoint: "https://mistral-7b-instruct-v0-3.endpoints.kepler.ai.cloud.ovh.net/api/openai_compat",
+  temperature:0.0,
+  maxTokens: 1024,
+  verbose: false,
+  streaming: true
 });
 
 // js-03-str-prompt
@@ -24,7 +26,10 @@ const promptTemplate = ChatPromptTemplate.fromMessages([
 // js-04-str-chain
 const chain = promptTemplate.pipe(model);
 
+chain.invoke({ question: "What is OVHcloud?" })
+
 // js-05-str-call
+
 const stream = await chain.stream({ question: "What is OVHcloud?" });
 console.log("Nestor 🤖: ");
 
