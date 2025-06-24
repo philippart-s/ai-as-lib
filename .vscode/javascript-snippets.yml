@@ -3,7 +3,7 @@ snippet js-str-dependencies:
   prefix: "js-01-str-dependencies"
   body: |
       "langchain": "0.3.28",
-      "@langchain/mistralai": "0.2.1",
+      "@langchain/mistralai": "0.1.1",
       "dotenv" :"16.4.5"
 
 snippet js-str-model:
@@ -14,7 +14,7 @@ snippet js-str-model:
     const model = new ChatMistralAI({
       modelName: process.env.OVH_AI_ENDPOINTS_MODEL_NAME,
       apiKey: process.env.OVH_AI_ENDPOINTS_ACCESS_TOKEN,
-      serverURL: "https://mistral-7b-instruct-v0-3.endpoints.kepler.ai.cloud.ovh.net/api/openai_compat",
+      endpoint: "https://mistral-7b-instruct-v0-3.endpoints.kepler.ai.cloud.ovh.net/api/openai_compat",
       temperature:0,
       maxTokens: 512
     });

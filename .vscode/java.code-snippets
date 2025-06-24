@@ -120,7 +120,7 @@
       "    _LOG.info(\"\\nEnter your message: \");",
       "    userInput = scanner.nextLine();",
       "    if (userInput.equalsIgnoreCase(\"exit\")) break;",
-      "    _LOG.info(\"Response: \" + chatBot.chat(userInput));",
+      "    _LOG.info(\"\\nResponse: \" + chatBot.chat(userInput));",
       "}",
       "scanner.close();",
       ""
@@ -517,7 +517,7 @@
       "ovhcloud.projectId=\\${OVH_CLOUD_PROJECT_SERVICE}",
       "",
       "# RestClient parameter",
-      "quarkus.rest-client.\"com.ovhcloud.sdk.service.OVHcloudMe\".url=https://eu.api.ovh.com/",
+      "quarkus.rest-client.\"fr.wilda.ai.service.OVHcloudMe\".url=https://eu.api.ovh.com/",
       ""
     ],
     "description": "",
